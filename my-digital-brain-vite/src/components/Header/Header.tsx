@@ -1,8 +1,6 @@
 import {
   AppBar,
-  // Typography,
   Toolbar,
-  // IconButton,
   Container
 } from "@mui/material";
 import Logo from "../Logo/Logo";
