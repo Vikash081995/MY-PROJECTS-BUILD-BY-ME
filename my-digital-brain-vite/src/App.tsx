@@ -6,14 +6,16 @@
 //     element: <h1>Home page </h1>
 //   }
 // ]);
-import "./index.css";
+
 import Header from "./components/Header/Header";
 import HeaderBackground from "./components/HeaderBackground/HeaderBackground";
-import { Box } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
+import React from "react";
 
 const App = () => {
   return (
-    <div>
+    <React.Fragment>
+      <CssBaseline />
       <Box
         sx={{
           display: "flex",
@@ -28,7 +30,7 @@ const App = () => {
           <Header />
         </Box>
       </Box>
-    </div>
+    </React.Fragment>
   );
 };
 

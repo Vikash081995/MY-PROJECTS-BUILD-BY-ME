@@ -1,32 +1,48 @@
-import { AppBar, Typography, Toolbar, IconButton } from "@mui/material";
-import PsychologyIcon from "@mui/icons-material/Psychology";
+import {
+  AppBar,
+  // Typography,
+  Toolbar,
+  // IconButton,
+  Container
+} from "@mui/material";
+import Logo from "../Logo/Logo";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import AvatarImage from "../Avatar/Avatar";
+
+const theme = createTheme({
+  palette: {
+    primary: { main: "#F7CAC9" }
+  },
+  components: {
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: "3rem" // Change this to the font size you want
+        }
+      }
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#079e49" // Change this to the color you want
+        }
+      }
+    }
+  }
+});
 
 const Header = () => {
   return (
-    <AppBar position="relative" sx={{ top: "30vh" }}>
-      <Toolbar>
-        <IconButton>
-          <PsychologyIcon />
-        </IconButton>
-        <Typography
-          variant="h6"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none"
-          }}
-        >
-          My Digital Brain
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <ThemeProvider theme={theme}>
+      <AppBar position="static">
+        <Container sx={{ maxWidth: "x1" }}>
+          <Toolbar disableGutters>
+            <Logo />
+          </Toolbar>
+          <AvatarImage />
+        </Container>
+      </AppBar>
+    </ThemeProvider>
   );
 };
 
