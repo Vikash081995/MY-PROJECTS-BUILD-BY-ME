@@ -32,12 +32,12 @@ const theme = createTheme({
 const Header = () => {
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Container sx={{ maxWidth: "x1" }}>
           <Toolbar disableGutters>
             <Logo />
+            <AvatarImage />
           </Toolbar>
-          <AvatarImage />
         </Container>
       </AppBar>
     </ThemeProvider>
